@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Office — Karyawan AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="office.css" />
+</head>
+<body class="office">
+  <header class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">K</span> Karyawan<span class="accent">AI</span> <span class="office__tag">Office</span></a>
+      <div class="office__actions">
+        <span class="office__company" id="companyLabel"></span>
+        <button class="btn btn--ghost btn--sm" id="resetBtn">Mulai Ulang</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container office__layout">
+    <section class="panel chatpanel" aria-label="Chat dengan Kepala Pengelola">
+      <div class="chatpanel__head">
+        <div class="avatar avatar--boss">PB</div>
+        <div>
+          <strong>Pak Bima</strong>
+          <small>Kepala Pengelola Karyawan AI · <span class="online">online</span></small>
+        </div>
+      </div>
+      <div class="chatpanel__log" id="chatLog" aria-live="polite"></div>
+      <div class="chatpanel__chips" id="chips"></div>
+      <form class="chatpanel__form" id="chatForm">
+        <input id="chatInput" autocomplete="off" placeholder="Ketik balasan…" aria-label="Pesan" />
+        <button class="btn btn--primary btn--sm" type="submit">Kirim</button>
+      </form>
+    </section>
+
+    <section class="panel workspace" aria-label="Tim Karyawan AI">
+      <div class="workspace__head">
+        <div>
+          <h2 id="teamTitle">Tim Anda</h2>
+          <p id="teamSubtitle" class="muted">Jawab pertanyaan Pak Bima untuk menyiapkan tim.</p>
+        </div>
+        <div class="cost" id="costBox" hidden>
+          <small>Estimasi sewa</small>
+          <strong id="costValue"></strong>
+        </div>
+      </div>
+
+      <div class="empty" id="emptyState">
+        <div class="empty__icon">🏢</div>
+        <p>Kantor masih kosong. Karyawan AI akan muncul di sini.</p>
+      </div>
+
+      <div class="team" id="team"></div>
+
+      <div class="activity" id="activity" hidden>
+        <h3>Aktivitas Kantor <span class="live">● LIVE</span></h3>
+        <ul id="activityLog"></ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="office.js"></script>
+</body>
+</html>
